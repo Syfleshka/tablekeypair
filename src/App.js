@@ -1,25 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import Table from "./Table";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [chtoto, setChtoto] = useState({
+        a: 1,
+        b: 2,
+        c: 3,
+    });
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo"/>
+                <Table
+                    chtoto={chtoto}
+                    setChtoto={setChtoto}
+                />
+
+                <p>{JSON.stringify(chtoto)}</p>
+            </header>
+        </div>
+    );
 }
 
-export default App;
+    export default App;
